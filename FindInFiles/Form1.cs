@@ -256,6 +256,11 @@ namespace FindInFiles
 
             listOrigenes.Items.Clear();
 
+            bool exists = System.IO.Directory.Exists(APP_PATH + "\\conf");
+
+            if (!exists)
+                System.IO.Directory.CreateDirectory(APP_PATH + "\\conf");
+
             foreach (string f in Directory.GetFiles(APP_PATH + "\\conf", "*.txt"))
             {
 
